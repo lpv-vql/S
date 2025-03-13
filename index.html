@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>scratchプロジェクトリダイレクト</title>
+</head>
+<body>
+
+<p>このページは自動的にリダイレクトします。</p>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const currentUrl = window.location.href;
+  const base32String = currentUrl.split('?')[1];
+
+  if (base32String) {
+    const decimalNumber = parseInt(base32String, 32);
+    const redirectUrl = `https://scratch.mit.edu/projects/${decimalNumber}/`;
+    window.location.href = redirectUrl;
+  }
+});
+</script>
+
+</body>
+</html>
